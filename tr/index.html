@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invoicle — Ücretsiz Telegram Fatura ve Ön Muhasebe Botu</title>
+<meta name="description" content="Telegram içinde 10 saniyede profesyonel PDF fatura oluşturun. Ön muhasebe, stok takibi, cari hesap ve satış raporlarıyla ücretsiz fatura programı. A4 ve A5 baskı, ayda 20 ücretsiz fatura.">
+<meta name="keywords" content="fatura programı, fatura oluşturma, ücretsiz fatura, telegram fatura botu, PDF fatura, ön muhasebe programı, stok takip, cari takip, gelir gider takibi, satış raporu, küçük işletme muhasebe, irsaliye">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="Invoicle">
+<meta name="theme-color" content="#0F766E">
+<link rel="canonical" href="https://tahbenab-ops.github.io/Invoicle/tr/">
+<link rel="alternate" hreflang="en" href="https://tahbenab-ops.github.io/Invoicle/en/">
+<link rel="alternate" hreflang="fa" href="https://tahbenab-ops.github.io/Invoicle/fa/">
+<link rel="alternate" hreflang="ar" href="https://tahbenab-ops.github.io/Invoicle/ar/">
+<link rel="alternate" hreflang="tr" href="https://tahbenab-ops.github.io/Invoicle/tr/">
+<link rel="alternate" hreflang="ru" href="https://tahbenab-ops.github.io/Invoicle/ru/">
+<link rel="alternate" hreflang="x-default" href="https://tahbenab-ops.github.io/Invoicle/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Invoicle">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Invoicle — Ücretsiz Telegram Fatura ve Ön Muhasebe Botu">
+<meta property="og:description" content="Telegram içinde 10 saniyede profesyonel PDF fatura oluşturun. Ön muhasebe, stok takibi, cari hesap ve satış raporlarıyla ücretsiz fatura programı. A4 ve A5 baskı, ayda 20 ücretsiz fatura.">
+<meta property="og:url" content="https://tahbenab-ops.github.io/Invoicle/tr/">
+<meta property="og:image" content="https://tahbenab-ops.github.io/Invoicle/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Invoicle — professional invoices in 10 seconds">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Invoicle — Ücretsiz Telegram Fatura ve Ön Muhasebe Botu">
+<meta name="twitter:description" content="Telegram içinde 10 saniyede profesyonel PDF fatura oluşturun. Ön muhasebe, stok takibi, cari hesap ve satış raporlarıyla ücretsiz fatura programı. A4 ve A5 baskı, ayda 20 ücretsiz fatura.">
+<meta name="twitter:image" content="https://tahbenab-ops.github.io/Invoicle/assets/og-image.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icon-32.png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="../assets/hero-invoice.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0F766E; --teal-d:#115E59; --teal-l:#14B8A6; --mint:#CCFBF1;
+  --ink:#0F172A; --body:#475569; --muted:#64748B;
+  --line:#E2E8F0; --bg:#FFFFFF; --soft:#F8FAFC;
+  --radius:16px; --shadow:0 4px 6px -1px rgb(0 0 0/.07),0 2px 4px -2px rgb(0 0 0/.05);
+  --shadow-lg:0 20px 25px -5px rgb(0 0 0/.08),0 8px 10px -6px rgb(0 0 0/.04);
+  --max:1140px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--body);background:var(--bg);line-height:1.7;font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink);line-height:1.25;margin:0 0 .5em;font-weight:800}
+h1{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.4vw,2.4rem);letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1rem}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.section{padding:76px 0}
+.section--soft{background:var(--soft)}
+.center{text-align:center}
+.lead{font-size:1.13rem;color:var(--body);max-width:56ch}
+.center .lead{margin-inline:auto}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;background:rgb(255 255 255/.88);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);font-size:1.15rem}
+.brand img{width:34px;height:34px;border-radius:8px}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--body);font-weight:600;font-size:.95rem}
+.nav-links a:hover{color:var(--teal);text-decoration:none}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--teal);color:#fff;padding:13px 26px;border-radius:12px;
+  font-weight:700;font-size:1rem;border:2px solid var(--teal);
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+  white-space:nowrap;
+}
+.btn:hover{background:var(--teal-d);border-color:var(--teal-d);text-decoration:none;
+  transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn--ghost{background:transparent;color:var(--teal);border-color:var(--line)}
+.btn--ghost:hover{background:var(--soft);color:var(--teal-d);border-color:var(--teal)}
+.btn--sm{padding:9px 18px;font-size:.92rem}
+.btn--lg{padding:16px 34px;font-size:1.08rem}
+
+/* hero */
+.hero{padding:70px 0 60px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.badge{
+  display:inline-flex;align-items:center;gap:7px;background:var(--mint);
+  color:var(--teal-d);padding:7px 15px;border-radius:999px;
+  font-size:.87rem;font-weight:700;margin-bottom:18px;
+}
+.hero p.lead{font-size:1.2rem;margin-bottom:26px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:16px}
+.hero-note{font-size:.9rem;color:var(--muted)}
+.hero-img{border-radius:20px;box-shadow:var(--shadow-lg)}
+.trust{
+  display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;
+  padding-top:26px;border-top:1px solid var(--line);
+}
+.trust span{display:flex;align-items:center;gap:7px;font-size:.92rem;
+  color:var(--body);font-weight:600}
+.trust span::before{content:"✓";color:var(--teal);font-weight:800}
+
+/* cards */
+.grid{display:grid;gap:22px}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#CBD5E1}
+.card .ico{font-size:1.9rem;line-height:1;margin-bottom:14px;display:block}
+.card p{margin:0;font-size:.97rem}
+
+/* steps */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{position:relative;padding-left:56px}
+.step::before{
+  counter-increment:step;content:counter(step);
+  position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;
+  background:var(--teal);color:#fff;display:grid;place-items:center;
+  font-weight:800;font-size:1.05rem;
+}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:860px;margin:0 auto}
+.plan{
+  background:#fff;border:2px solid var(--line);border-radius:20px;padding:34px;
+  display:flex;flex-direction:column;position:relative;
+}
+.plan--pro{border-color:var(--teal);box-shadow:var(--shadow-lg)}
+.plan-badge{
+  position:absolute;top:-13px;left:34px;background:var(--teal);color:#fff;
+  padding:5px 15px;border-radius:999px;font-size:.8rem;font-weight:700;
+}
+.plan h3{font-size:1.25rem;margin-bottom:6px}
+.price{display:flex;align-items:baseline;gap:8px;margin:10px 0 22px}
+.price b{font-size:2.7rem;color:var(--ink);font-weight:800;line-height:1}
+.price span{color:var(--muted);font-size:.96rem}
+.plan ul{list-style:none;padding:0;margin:0 0 26px;flex:1}
+.plan li{padding:8px 0;display:flex;gap:10px;align-items:flex-start;font-size:.97rem}
+.plan li::before{content:"✓";color:var(--teal);font-weight:800;flex:0 0 auto}
+.note{
+  max-width:860px;margin:26px auto 0;padding:15px 20px;background:var(--mint);
+  border-radius:12px;font-size:.94rem;color:var(--teal-d);text-align:center;
+}
+.why{max-width:860px;margin:44px auto 0}
+.why-item{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);
+  border-radius:12px;padding:20px 24px;margin-bottom:14px;
+}
+html[dir="rtl"] .why-item{border-left:1px solid var(--line);border-right:4px solid var(--teal)}
+.why-item h3{margin-bottom:6px;font-size:1.05rem}
+.why-item p{margin:0;font-size:.96rem}
+
+/* faq */
+.faq{max-width:800px;margin:0 auto}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:18px 22px;margin-bottom:12px;transition:border-color .2s ease;
+}
+details[open]{border-color:var(--teal)}
+summary{
+  cursor:pointer;font-weight:700;color:var(--ink);font-size:1.02rem;
+  list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:1.5rem;font-weight:400;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin:14px 0 0;font-size:.97rem}
+
+/* cta */
+.cta{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;text-align:center}
+.cta h2,.cta p{color:#fff}
+.cta p{opacity:.92;font-size:1.1rem;margin-bottom:26px}
+.cta .btn{background:#fff;color:var(--teal-d);border-color:#fff}
+.cta .btn:hover{background:var(--mint);border-color:var(--mint)}
+
+/* footer */
+footer{background:var(--ink);color:#94A3B8;padding:52px 0 26px;font-size:.94rem}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px;margin-bottom:34px}
+footer h4{color:#fff;font-size:.95rem;margin:0 0 14px;font-weight:700}
+footer a{color:#94A3B8;display:block;padding:4px 0}
+footer a:hover{color:#fff}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;
+  font-size:1.1rem;margin-bottom:12px}
+.foot-brand img{width:30px;height:30px;border-radius:7px}
+.foot-bottom{border-top:1px solid #1E293B;padding-top:22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.88rem}
+.langs{display:flex;gap:8px;flex-wrap:wrap}
+.langs a{
+  display:inline-block;padding:5px 12px;border:1px solid #334155;
+  border-radius:8px;font-size:.85rem;
+}
+.langs a[aria-current="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* animation */
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.reveal{animation:rise .6s ease both}
+.reveal:nth-child(2){animation-delay:.08s}
+.reveal:nth-child(3){animation-delay:.16s}
+.reveal:nth-child(4){animation-delay:.24s}
+.reveal:nth-child(5){animation-delay:.32s}
+.reveal:nth-child(6){animation-delay:.4s}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* legal pages */
+.legal{max-width:780px;margin:0 auto}
+.legal h2{font-size:1.35rem;margin-top:36px}
+.legal ul{padding-left:22px}
+.legal li{margin-bottom:8px}
+.updated{color:var(--muted);font-size:.9rem}
+
+/* responsive */
+@media(max-width:900px){
+  .hero-grid,.grid--3,.grid--2,.steps,.plans,.foot-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .section{padding:52px 0}
+  .hero{padding:44px 0}
+  body{font-size:16px}
+}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:12px;background:#fff;padding:10px 16px;
+  border-radius:8px;z-index:100;box-shadow:var(--shadow-lg)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Invoicle", "alternateName": "@Invoiclebot", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Invoicing & Accounting", "operatingSystem": "Telegram (iOS, Android, Windows, macOS, Linux, Web)", "url": "https://tahbenab-ops.github.io/Invoicle/tr/", "description": "Telegram içinde 10 saniyede profesyonel PDF fatura oluşturun. Ön muhasebe, stok takibi, cari hesap ve satış raporlarıyla ücretsiz fatura programı. A4 ve A5 baskı, ayda 20 ücretsiz fatura.", "inLanguage": "tr", "image": "https://tahbenab-ops.github.io/Invoicle/assets/og-image.png", "screenshot": "https://tahbenab-ops.github.io/Invoicle/assets/hero-invoice.png", "featureList": ["Anında faturalama", "A4 ve A5 baskı", "Sizin markanız, bizim değil", "Cari hesap defteri", "Stok takibi", "Raporlar ve Excel"], "offers": [{"@type": "Offer", "name": "Ücretsiz", "price": "0", "priceCurrency": "USD", "description": "Ayda 20 fatura"}, {"@type": "Offer", "name": "Pro", "price": "3", "priceCurrency": "USD", "description": "Sınırsız fatura"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "tr", "mainEntity": [{"@type": "Question", "name": "Invoicle gerçekten ücretsiz mi?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Her ay 20 faturayı sonsuza kadar ücretsiz alırsınız. Ön muhasebe, stok, cari defter ve raporlar sınırsız şekilde ücretsizdir."}}, {"@type": "Question", "name": "Bir şey kurmam gerekiyor mu?", "acceptedAnswer": {"@type": "Answer", "text": "Hayır. Invoicle tamamen Telegram içinde çalışır; Telegram'ı olan her telefon, tablet veya bilgisayarda kullanılır."}}, {"@type": "Question", "name": "Faturaları yazdırabilir miyim?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Her fatura A4 veya A5 boyutunda gerçek bir PDF olarak üretilir; her yazıcıdan yazdırabilir veya e-posta ile gönderebilirsiniz."}}, {"@type": "Question", "name": "Hangi diller destekleniyor?", "acceptedAnswer": {"@type": "Answer", "text": "Türkçe, İngilizce, Farsça, Arapça ve Rusça; doğru sağdan sola düzen ve yerel tarih ile para birimi biçimleriyle."}}, {"@type": "Question", "name": "Faturaya kendi logomu koyabilir miyim?", "acceptedAnswer": {"@type": "Answer", "text": "Evet. Ayarlar'dan logonuzu bir kez yükleyin, tüm faturalarda görünür. Pro ayrıca küçük Invoicle satırını da kaldırır."}}, {"@type": "Question", "name": "Verilerim güvende mi?", "acceptedAnswer": {"@type": "Answer", "text": "İşletme verileriniz yalnızca belgelerinizi oluşturmak için saklanır; asla satılmaz veya paylaşılmaz. İstediğiniz zaman tam yedek alabilirsiniz."}}, {"@type": "Question", "name": "Pro için nasıl ödeme yaparım?", "acceptedAnswer": {"@type": "Answer", "text": "Telegram Stars, Polygon veya TRON üzerinde USDT ve İran'daki kullanıcılar için kart transferi. Ödemeden sonra abonelik otomatik etkinleşir."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Invoicle", "url": "https://tahbenab-ops.github.io/Invoicle", "logo": "https://tahbenab-ops.github.io/Invoicle/assets/icon-512.png", "sameAs": ["https://t.me/Invoiclebot"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Invoicle", "item": "https://tahbenab-ops.github.io/Invoicle"}, {"@type": "ListItem", "position": 2, "name": "Türkçe", "item": "https://tahbenab-ops.github.io/Invoicle/tr/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Mesajdan faturaya üç adımda", "inLanguage": "tr", "step": [{"@type": "HowToStep", "position": 1, "name": "Botu açın", "text": "Telegram'da Start'a basın, ülke ve dilinizi seçin. Kurulum 20 saniye."}, {"@type": "HowToStep", "position": 2, "name": "Kalemleri gönderin", "text": "Müşteri adını ve her ürünü adet ve fiyatıyla tek mesajda yazın."}, {"@type": "HowToStep", "position": 3, "name": "PDF'inizi alın", "text": "Bot baskıya hazır bir PDF ve müşteriye doğrudan gönderebileceğiniz bir görsel yollar."}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+<div class="wrap nav">
+  <a class="brand" href="./">
+    <img src="../assets/icon-192.png" alt="Invoicle logo" width="34" height="34">
+    Invoicle
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#features">Özellikler</a>
+    <a href="#how">Nasıl çalışır</a>
+    <a href="#pricing">Fiyatlar</a>
+    <a href="#faq">SSS</a>
+  </nav>
+  <a class="btn btn--sm" href="https://t.me/Invoiclebot" rel="noopener">Telegram&#x27;da başla</a>
+</div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="badge">🎉 Her ay 20 ücretsiz fatura</span>
+      <h1>10 saniyede profesyonel fatura</h1>
+      <p class="lead">Invoicle, tek bir mesajı baskıya hazır PDF faturaya dönüştüren bir Telegram botudur. Uygulama kurulumu yok, tablo yok, karmaşık ayar yok — sadece müşteri adını ve kalemleri gönderin.</p>
+      <div class="hero-actions">
+        <a class="btn btn--lg" href="https://t.me/Invoiclebot" rel="noopener">Telegram&#x27;da ücretsiz başla</a>
+        <a class="btn btn--ghost btn--lg" href="#how">Nasıl çalıştığını gör</a>
+      </div>
+      <p class="hero-note">Telegram olan her telefon ve bilgisayarda · Kredi kartı gerekmez</p>
+      <div class="trust"><span>PDF ve görsel çıktı</span><span>A4 ve A5 baskı</span><span>5 dil</span><span>Her faturada logonuz</span></div>
+    </div>
+    <div class="reveal">
+      <img class="hero-img" src="../assets/hero-invoice.png" width="1568" height="882"
+           alt="10 saniyede profesyonel fatura — Invoicle Telegram bot invoice preview" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="features">
+  <div class="wrap">
+    <div class="center">
+      <h2>Küçük işletmenin ihtiyacı olan her şey</h2>
+      <p class="lead">Tek bir bot; fatura şablonunuzun, defterinizin ve stok listenizin yerini alır.</p>
+    </div>
+    <div class="grid grid--3" style="margin-top:44px"><article class="card reveal"><span class="ico" aria-hidden="true">🧾</span><h3>Anında faturalama</h3><p>Tek mesaj gönderin, profesyonel PDF ve paylaşılabilir görsel alın. Yerel tarih biçimi ve para birimi otomatik uygulanır.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">🖨️</span><h3>A4 ve A5 baskı</h3><p>Normal baskı için A4, fiş için A5 seçin. İkisi de gerçek tek sayfalık belgedir ve her yazıcıya hazırdır.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">🖼️</span><h3>Sizin markanız, bizim değil</h3><p>Logonuzu ve ürün fotoğraflarınızı yükleyin. Ücretli planda Invoicle ibaresi tamamen kalkar, fatura %100 sizin olur.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">👥</span><h3>Cari hesap defteri</h3><p>Her fatura otomatik olarak müşteriye bağlanır; alım geçmişi ve açık bakiye tek bakışta görünür.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">📦</span><h3>Stok takibi</h3><p>Sürekli sattığınız ürünleri bir kez kaydedin. Her satışta stok düşer ve tükenmeden önce uyarı alırsınız.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">📊</span><h3>Raporlar ve Excel</h3><p>Ciro, tahsil edilen ve bekleyen tutarlar, en iyi müşteriler ve çok satanlar — istediğiniz dönem için, Excel çıktısıyla.</p></article></div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="center"><h2>Mesajdan faturaya üç adımda</h2></div>
+    <div class="steps" style="margin-top:44px"><div class="step reveal"><h3>Botu açın</h3><p>Telegram&#x27;da Start&#x27;a basın, ülke ve dilinizi seçin. Kurulum 20 saniye.</p></div><div class="step reveal"><h3>Kalemleri gönderin</h3><p>Müşteri adını ve her ürünü adet ve fiyatıyla tek mesajda yazın.</p></div><div class="step reveal"><h3>PDF&#x27;inizi alın</h3><p>Bot baskıya hazır bir PDF ve müşteriye doğrudan gönderebileceğiniz bir görsel yollar.</p></div></div>
+  </div>
+</section>
+
+<section class="section section--soft" id="pricing">
+  <div class="wrap">
+    <div class="center">
+      <h2>Basit ve dürüst fiyatlandırma</h2>
+      <p class="lead">Ön muhasebe ve raporlar her zaman ücretsiz. Yalnızca hacim ve marka için ödersiniz.</p>
+    </div>
+    <div class="plans" style="margin-top:44px">
+      <div class="plan">
+        <h3>Ücretsiz</h3>
+        <div class="price"><b>0₺</b><span>sonsuza kadar</span></div>
+        <ul><li>Ayda 20 fatura</li><li>PDF ve görsel çıktı</li><li>A4 ve A5 baskı</li><li>Cari defter ve stok</li><li>Gelir, gider ve raporlar</li><li>Excel çıktısı</li></ul>
+        <a class="btn btn--ghost" href="https://t.me/Invoiclebot" rel="noopener">Ücretsiz başla — sonra yükselt</a>
+      </div>
+      <div class="plan plan--pro">
+        <span class="plan-badge">En çok tercih edilen</span>
+        <h3>Pro</h3>
+        <div class="price"><b>$3</b><span>aylık</span></div>
+        <ul><li>Sınırsız fatura</li><li>Faturalarda Invoicle ibaresi yok</li><li>Her belgede kendi logonuz</li><li>Öncelikli destek</li><li>Ücretsiz plandaki her şey</li></ul>
+        <a class="btn" href="https://t.me/Invoiclebot" rel="noopener">Telegram&#x27;da başla</a>
+      </div>
+    </div>
+    <p class="note">İran&#x27;daki kullanıcılar: kart transferiyle 249.000 Toman veya Telegram Stars / kripto ile 1,5 dolar karşılığı.</p>
+    <div class="why">
+      <h2 class="center" style="font-size:1.5rem;margin-bottom:22px">Neden Pro&#x27;ya geçmeli?</h2>
+      <div class="why-item"><h3>Faturanız tamamen profesyonel görünür</h3><p>Ücretsiz planda faturanın altına küçük bir “Created with @Invoiclebot” satırı basılır. Pro bunu tamamen kaldırır; müşteri yalnızca sizin markanızı görür.</p></div><div class="why-item"><h3>Aylık limit yok</h3><p>Ayda 20&#x27;den fazla fatura kesiyorsanız Pro sınırı tamamen kaldırır; gelecek ayı beklemeniz gerekmez.</p></div><div class="why-item"><h3>Kendini amorti eder</h3><p>Ayda 3 dolar, bir kahveden daha ucuz — ve tek bir faturayı elle biçimlendirmeye harcayacağınız zamandan çok daha az.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="center"><h2>Sık sorulan sorular</h2></div>
+    <div class="faq" style="margin-top:38px"><details><summary>Invoicle gerçekten ücretsiz mi?</summary><p>Evet. Her ay 20 faturayı sonsuza kadar ücretsiz alırsınız. Ön muhasebe, stok, cari defter ve raporlar sınırsız şekilde ücretsizdir.</p></details><details><summary>Bir şey kurmam gerekiyor mu?</summary><p>Hayır. Invoicle tamamen Telegram içinde çalışır; Telegram&#x27;ı olan her telefon, tablet veya bilgisayarda kullanılır.</p></details><details><summary>Faturaları yazdırabilir miyim?</summary><p>Evet. Her fatura A4 veya A5 boyutunda gerçek bir PDF olarak üretilir; her yazıcıdan yazdırabilir veya e-posta ile gönderebilirsiniz.</p></details><details><summary>Hangi diller destekleniyor?</summary><p>Türkçe, İngilizce, Farsça, Arapça ve Rusça; doğru sağdan sola düzen ve yerel tarih ile para birimi biçimleriyle.</p></details><details><summary>Faturaya kendi logomu koyabilir miyim?</summary><p>Evet. Ayarlar&#x27;dan logonuzu bir kez yükleyin, tüm faturalarda görünür. Pro ayrıca küçük Invoicle satırını da kaldırır.</p></details><details><summary>Verilerim güvende mi?</summary><p>İşletme verileriniz yalnızca belgelerinizi oluşturmak için saklanır; asla satılmaz veya paylaşılmaz. İstediğiniz zaman tam yedek alabilirsiniz.</p></details><details><summary>Pro için nasıl ödeme yaparım?</summary><p>Telegram Stars, Polygon veya TRON üzerinde USDT ve İran&#x27;daki kullanıcılar için kart transferi. Ödemeden sonra abonelik otomatik etkinleşir.</p></details></div>
+  </div>
+</section>
+
+<section class="section cta">
+  <div class="wrap">
+    <h2>İlk faturanızı bugün gönderin</h2>
+    <p>Bir dakikadan kısa sürer ve hiçbir ücreti yoktur.</p>
+    <a class="btn btn--lg" href="https://t.me/Invoiclebot" rel="noopener">Invoicle&#x27;ı Telegram&#x27;da aç</a>
+  </div>
+</section>
+
+</main>
+<footer>
+<div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">
+        <img src="../assets/icon-192.png" alt="" width="30" height="30">Invoicle
+      </div>
+      <p>Küçük işletmeler için Telegram içinde fatura ve ön muhasebe.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="./#features">Özellikler</a>
+      <a href="./#pricing">Fiyatlar</a>
+      <a href="./#faq">SSS</a>
+      <a href="https://t.me/Invoiclebot" rel="noopener">@Invoiclebot</a>
+    </div>
+    <div>
+      <h4>Yasal</h4>
+      <a href="./privacy.html">Gizlilik Politikası</a>
+      <a href="./terms.html">Kullanım Şartları</a>
+    </div>
+    <div>
+      <h4>Dil</h4>
+      <div class="langs"><a href="../en/" hreflang="en" lang="en">English</a><a href="../fa/" hreflang="fa" lang="fa">فارسی</a><a href="../ar/" hreflang="ar" lang="ar">العربية</a><a href="../tr/" hreflang="tr" lang="tr" aria-current="true">Türkçe</a><a href="../ru/" hreflang="ru" lang="ru">Русский</a></div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Invoicle. Tüm hakları saklıdır.</span>
+    <span>@Invoiclebot</span>
+  </div>
+</div>
+</footer>
+</body>
+</html>

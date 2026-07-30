@@ -1,3 +1,14 @@
 User-agent: *
 Allow: /
-Sitemap: https://example.com/sitemap.xml
+
+# Explicitly welcome AI and search crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+Sitemap: https://tahbenab-ops.github.io/Invoicle/sitemap.xml

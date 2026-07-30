@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Invoicle — ربات فاکتور و حسابداری تلگرام | صدور فاکتور رایگان PDF</title>
+<meta name="description" content="ساخت فاکتور فروش حرفه‌ای PDF در ۱۰ ثانیه داخل تلگرام. ربات فاکتور رایگان با حسابداری، انبارداری، دفتر مشتریان و گزارش فروش. چاپ A4 و A5، ۲۰ فاکتور رایگان در ماه.">
+<meta name="keywords" content="ربات فاکتور تلگرام, صدور فاکتور, فاکتور فروش, نرم افزار حسابداری, فاکتور رایگان, چاپ فاکتور, فاکتور PDF, انبارداری, دفتر دخل و خرج, حسابداری تلگرام, فاکتور A4, فاکتور A5, گزارش فروش, مدیریت مشتریان">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="Invoicle">
+<meta name="theme-color" content="#0F766E">
+<link rel="canonical" href="https://tahbenab-ops.github.io/Invoicle/fa/">
+<link rel="alternate" hreflang="en" href="https://tahbenab-ops.github.io/Invoicle/en/">
+<link rel="alternate" hreflang="fa" href="https://tahbenab-ops.github.io/Invoicle/fa/">
+<link rel="alternate" hreflang="ar" href="https://tahbenab-ops.github.io/Invoicle/ar/">
+<link rel="alternate" hreflang="tr" href="https://tahbenab-ops.github.io/Invoicle/tr/">
+<link rel="alternate" hreflang="ru" href="https://tahbenab-ops.github.io/Invoicle/ru/">
+<link rel="alternate" hreflang="x-default" href="https://tahbenab-ops.github.io/Invoicle/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Invoicle">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="Invoicle — ربات فاکتور و حسابداری تلگرام | صدور فاکتور رایگان PDF">
+<meta property="og:description" content="ساخت فاکتور فروش حرفه‌ای PDF در ۱۰ ثانیه داخل تلگرام. ربات فاکتور رایگان با حسابداری، انبارداری، دفتر مشتریان و گزارش فروش. چاپ A4 و A5، ۲۰ فاکتور رایگان در ماه.">
+<meta property="og:url" content="https://tahbenab-ops.github.io/Invoicle/fa/">
+<meta property="og:image" content="https://tahbenab-ops.github.io/Invoicle/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Invoicle — professional invoices in 10 seconds">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Invoicle — ربات فاکتور و حسابداری تلگرام | صدور فاکتور رایگان PDF">
+<meta name="twitter:description" content="ساخت فاکتور فروش حرفه‌ای PDF در ۱۰ ثانیه داخل تلگرام. ربات فاکتور رایگان با حسابداری، انبارداری، دفتر مشتریان و گزارش فروش. چاپ A4 و A5، ۲۰ فاکتور رایگان در ماه.">
+<meta name="twitter:image" content="https://tahbenab-ops.github.io/Invoicle/assets/og-image.png">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icon-32.png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="../assets/hero-invoice.png">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0F766E; --teal-d:#115E59; --teal-l:#14B8A6; --mint:#CCFBF1;
+  --ink:#0F172A; --body:#475569; --muted:#64748B;
+  --line:#E2E8F0; --bg:#FFFFFF; --soft:#F8FAFC;
+  --radius:16px; --shadow:0 4px 6px -1px rgb(0 0 0/.07),0 2px 4px -2px rgb(0 0 0/.05);
+  --shadow-lg:0 20px 25px -5px rgb(0 0 0/.08),0 8px 10px -6px rgb(0 0 0/.04);
+  --max:1140px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--body);background:var(--bg);line-height:1.7;font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{color:var(--ink);line-height:1.25;margin:0 0 .5em;font-weight:800}
+h1{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3.4vw,2.4rem);letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1rem}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.section{padding:76px 0}
+.section--soft{background:var(--soft)}
+.center{text-align:center}
+.lead{font-size:1.13rem;color:var(--body);max-width:56ch}
+.center .lead{margin-inline:auto}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;background:rgb(255 255 255/.88);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);font-size:1.15rem}
+.brand img{width:34px;height:34px;border-radius:8px}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{color:var(--body);font-weight:600;font-size:.95rem}
+.nav-links a:hover{color:var(--teal);text-decoration:none}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--teal);color:#fff;padding:13px 26px;border-radius:12px;
+  font-weight:700;font-size:1rem;border:2px solid var(--teal);
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+  white-space:nowrap;
+}
+.btn:hover{background:var(--teal-d);border-color:var(--teal-d);text-decoration:none;
+  transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn--ghost{background:transparent;color:var(--teal);border-color:var(--line)}
+.btn--ghost:hover{background:var(--soft);color:var(--teal-d);border-color:var(--teal)}
+.btn--sm{padding:9px 18px;font-size:.92rem}
+.btn--lg{padding:16px 34px;font-size:1.08rem}
+
+/* hero */
+.hero{padding:70px 0 60px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.badge{
+  display:inline-flex;align-items:center;gap:7px;background:var(--mint);
+  color:var(--teal-d);padding:7px 15px;border-radius:999px;
+  font-size:.87rem;font-weight:700;margin-bottom:18px;
+}
+.hero p.lead{font-size:1.2rem;margin-bottom:26px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:16px}
+.hero-note{font-size:.9rem;color:var(--muted)}
+.hero-img{border-radius:20px;box-shadow:var(--shadow-lg)}
+.trust{
+  display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;
+  padding-top:26px;border-top:1px solid var(--line);
+}
+.trust span{display:flex;align-items:center;gap:7px;font-size:.92rem;
+  color:var(--body);font-weight:600}
+.trust span::before{content:"✓";color:var(--teal);font-weight:800}
+
+/* cards */
+.grid{display:grid;gap:22px}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:#CBD5E1}
+.card .ico{font-size:1.9rem;line-height:1;margin-bottom:14px;display:block}
+.card p{margin:0;font-size:.97rem}
+
+/* steps */
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{position:relative;padding-right:56px}
+.step::before{
+  counter-increment:step;content:counter(step);
+  position:absolute;right:0;top:0;width:40px;height:40px;border-radius:50%;
+  background:var(--teal);color:#fff;display:grid;place-items:center;
+  font-weight:800;font-size:1.05rem;
+}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;max-width:860px;margin:0 auto}
+.plan{
+  background:#fff;border:2px solid var(--line);border-radius:20px;padding:34px;
+  display:flex;flex-direction:column;position:relative;
+}
+.plan--pro{border-color:var(--teal);box-shadow:var(--shadow-lg)}
+.plan-badge{
+  position:absolute;top:-13px;right:34px;background:var(--teal);color:#fff;
+  padding:5px 15px;border-radius:999px;font-size:.8rem;font-weight:700;
+}
+.plan h3{font-size:1.25rem;margin-bottom:6px}
+.price{display:flex;align-items:baseline;gap:8px;margin:10px 0 22px}
+.price b{font-size:2.7rem;color:var(--ink);font-weight:800;line-height:1}
+.price span{color:var(--muted);font-size:.96rem}
+.plan ul{list-style:none;padding:0;margin:0 0 26px;flex:1}
+.plan li{padding:8px 0;display:flex;gap:10px;align-items:flex-start;font-size:.97rem}
+.plan li::before{content:"✓";color:var(--teal);font-weight:800;flex:0 0 auto}
+.note{
+  max-width:860px;margin:26px auto 0;padding:15px 20px;background:var(--mint);
+  border-radius:12px;font-size:.94rem;color:var(--teal-d);text-align:center;
+}
+.why{max-width:860px;margin:44px auto 0}
+.why-item{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);
+  border-radius:12px;padding:20px 24px;margin-bottom:14px;
+}
+html[dir="rtl"] .why-item{border-left:1px solid var(--line);border-right:4px solid var(--teal)}
+.why-item h3{margin-bottom:6px;font-size:1.05rem}
+.why-item p{margin:0;font-size:.96rem}
+
+/* faq */
+.faq{max-width:800px;margin:0 auto}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:18px 22px;margin-bottom:12px;transition:border-color .2s ease;
+}
+details[open]{border-color:var(--teal)}
+summary{
+  cursor:pointer;font-weight:700;color:var(--ink);font-size:1.02rem;
+  list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:1.5rem;font-weight:400;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin:14px 0 0;font-size:.97rem}
+
+/* cta */
+.cta{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;text-align:center}
+.cta h2,.cta p{color:#fff}
+.cta p{opacity:.92;font-size:1.1rem;margin-bottom:26px}
+.cta .btn{background:#fff;color:var(--teal-d);border-color:#fff}
+.cta .btn:hover{background:var(--mint);border-color:var(--mint)}
+
+/* footer */
+footer{background:var(--ink);color:#94A3B8;padding:52px 0 26px;font-size:.94rem}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px;margin-bottom:34px}
+footer h4{color:#fff;font-size:.95rem;margin:0 0 14px;font-weight:700}
+footer a{color:#94A3B8;display:block;padding:4px 0}
+footer a:hover{color:#fff}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;
+  font-size:1.1rem;margin-bottom:12px}
+.foot-brand img{width:30px;height:30px;border-radius:7px}
+.foot-bottom{border-top:1px solid #1E293B;padding-top:22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.88rem}
+.langs{display:flex;gap:8px;flex-wrap:wrap}
+.langs a{
+  display:inline-block;padding:5px 12px;border:1px solid #334155;
+  border-radius:8px;font-size:.85rem;
+}
+.langs a[aria-current="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* animation */
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.reveal{animation:rise .6s ease both}
+.reveal:nth-child(2){animation-delay:.08s}
+.reveal:nth-child(3){animation-delay:.16s}
+.reveal:nth-child(4){animation-delay:.24s}
+.reveal:nth-child(5){animation-delay:.32s}
+.reveal:nth-child(6){animation-delay:.4s}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* legal pages */
+.legal{max-width:780px;margin:0 auto}
+.legal h2{font-size:1.35rem;margin-top:36px}
+.legal ul{padding-right:22px}
+.legal li{margin-bottom:8px}
+.updated{color:var(--muted);font-size:.9rem}
+
+/* responsive */
+@media(max-width:900px){
+  .hero-grid,.grid--3,.grid--2,.steps,.plans,.foot-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .section{padding:52px 0}
+  .hero{padding:44px 0}
+  body{font-size:16px}
+}
+.skip{position:absolute;right:-9999px}
+.skip:focus{right:16px;top:12px;background:#fff;padding:10px 16px;
+  border-radius:8px;z-index:100;box-shadow:var(--shadow-lg)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Invoicle", "alternateName": "@Invoiclebot", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Invoicing & Accounting", "operatingSystem": "Telegram (iOS, Android, Windows, macOS, Linux, Web)", "url": "https://tahbenab-ops.github.io/Invoicle/fa/", "description": "ساخت فاکتور فروش حرفه‌ای PDF در ۱۰ ثانیه داخل تلگرام. ربات فاکتور رایگان با حسابداری، انبارداری، دفتر مشتریان و گزارش فروش. چاپ A4 و A5، ۲۰ فاکتور رایگان در ماه.", "inLanguage": "fa", "image": "https://tahbenab-ops.github.io/Invoicle/assets/og-image.png", "screenshot": "https://tahbenab-ops.github.io/Invoicle/assets/hero-invoice.png", "featureList": ["صدور فوری فاکتور", "چاپ A4 و A5", "برند شما، نه ما", "دفتر مشتریان", "کنترل انبار", "گزارش و خروجی اکسل"], "offers": [{"@type": "Offer", "name": "رایگان", "price": "0", "priceCurrency": "USD", "description": "۲۰ فاکتور در هر ماه"}, {"@type": "Offer", "name": "حرفه‌ای", "price": "3", "priceCurrency": "USD", "description": "فاکتور نامحدود"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "fa", "mainEntity": [{"@type": "Question", "name": "واقعاً رایگان است؟", "acceptedAnswer": {"@type": "Answer", "text": "بله. ماهانه ۲۰ فاکتور کاملاً رایگان دارید، برای همیشه. حسابداری، انبارداری، دفتر مشتریان و گزارش‌ها بدون هیچ محدودیتی رایگان می‌مانند."}}, {"@type": "Question", "name": "باید برنامه‌ای نصب کنم؟", "acceptedAnswer": {"@type": "Answer", "text": "خیر. Invoicle کاملاً داخل تلگرام کار می‌کند، پس روی هر گوشی، تبلت یا کامپیوتری که تلگرام دارد اجرا می‌شود."}}, {"@type": "Question", "name": "می‌توانم فاکتورها را چاپ کنم؟", "acceptedAnswer": {"@type": "Answer", "text": "بله. هر فاکتور به‌صورت فایل PDF واقعی در اندازه A4 یا A5 ساخته می‌شود و روی هر پرینتری قابل چاپ یا ارسال با ایمیل است."}}, {"@type": "Question", "name": "چه زبان‌هایی پشتیبانی می‌شود؟", "acceptedAnswer": {"@type": "Answer", "text": "فارسی، انگلیسی، عربی، ترکی و روسی؛ همراه با چیدمان صحیح راست‌چین و قالب تاریخ و واحد پول محلی."}}, {"@type": "Question", "name": "می‌توانم لوگوی خودم را روی فاکتور بگذارم؟", "acceptedAnswer": {"@type": "Answer", "text": "بله. یک بار در تنظیمات لوگو را آپلود کنید تا روی همه فاکتورها بیاید. اشتراک حرفه‌ای، خط تبلیغ ربات را هم حذف می‌کند."}}, {"@type": "Question", "name": "اطلاعات من امن است؟", "acceptedAnswer": {"@type": "Answer", "text": "اطلاعات کسب‌وکار شما فقط برای ساخت اسناد استفاده می‌شود و هرگز فروخته یا منتشر نمی‌شود. هر زمان بخواهید می‌توانید فایل پشتیبان کامل بگیرید."}}, {"@type": "Question", "name": "هزینه اشتراک را چطور پرداخت کنم؟", "acceptedAnswer": {"@type": "Answer", "text": "Telegram Stars، تتر روی شبکه Polygon یا TRON، و کارت‌به‌کارت برای کاربران ایران. اشتراک بعد از پرداخت به‌صورت خودکار فعال می‌شود."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Invoicle", "url": "https://tahbenab-ops.github.io/Invoicle", "logo": "https://tahbenab-ops.github.io/Invoicle/assets/icon-512.png", "sameAs": ["https://t.me/Invoiclebot"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Invoicle", "item": "https://tahbenab-ops.github.io/Invoicle"}, {"@type": "ListItem", "position": 2, "name": "فارسی", "item": "https://tahbenab-ops.github.io/Invoicle/fa/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "از پیام تا فاکتور، در سه قدم", "inLanguage": "fa", "step": [{"@type": "HowToStep", "position": 1, "name": "ربات را باز کنید", "text": "در تلگرام Start را بزنید و کشور و زبان را انتخاب کنید. کل تنظیمات ۲۰ ثانیه است."}, {"@type": "HowToStep", "position": 2, "name": "اقلام را بفرستید", "text": "نام مشتری و هر کالا را با تعداد و قیمت، همه در یک پیام بنویسید."}, {"@type": "HowToStep", "position": 3, "name": "فاکتور را بگیرید", "text": "ربات یک PDF آماده چاپ و یک عکس می‌دهد که مستقیم برای مشتری می‌فرستید."}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+<div class="wrap nav">
+  <a class="brand" href="./">
+    <img src="../assets/icon-192.png" alt="Invoicle logo" width="34" height="34">
+    Invoicle
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#features">امکانات</a>
+    <a href="#how">نحوه کار</a>
+    <a href="#pricing">تعرفه</a>
+    <a href="#faq">سؤالات</a>
+  </nav>
+  <a class="btn btn--sm" href="https://t.me/Invoiclebot" rel="noopener">شروع در تلگرام</a>
+</div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="badge">🎉 ۲۰ فاکتور رایگان در هر ماه</span>
+      <h1>فاکتور حرفه‌ای در ۱۰ ثانیه</h1>
+      <p class="lead">Invoicle یک ربات تلگرام است که یک پیام ساده را به فاکتور PDF آماده چاپ تبدیل می‌کند. بدون نصب برنامه، بدون اکسل و بدون تنظیمات پیچیده — فقط نام مشتری و اقلام را بفرستید.</p>
+      <div class="hero-actions">
+        <a class="btn btn--lg" href="https://t.me/Invoiclebot" rel="noopener">شروع رایگان در تلگرام</a>
+        <a class="btn btn--ghost btn--lg" href="#how">ببینید چطور کار می‌کند</a>
+      </div>
+      <p class="hero-note">روی هر گوشی یا کامپیوتری که تلگرام دارد · بدون کارت بانکی</p>
+      <div class="trust"><span>خروجی PDF و عکس</span><span>چاپ A4 و A5</span><span>۵ زبان</span><span>لوگوی شما روی فاکتور</span></div>
+    </div>
+    <div class="reveal">
+      <img class="hero-img" src="../assets/hero-invoice.png" width="1568" height="882"
+           alt="فاکتور حرفه‌ای در ۱۰ ثانیه — Invoicle Telegram bot invoice preview" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft" id="features">
+  <div class="wrap">
+    <div class="center">
+      <h2>هر آنچه یک کسب‌وکار کوچک لازم دارد</h2>
+      <p class="lead">یک ربات جای قالب فاکتور، دفترچه و لیست انبار شما را می‌گیرد.</p>
+    </div>
+    <div class="grid grid--3" style="margin-top:44px"><article class="card reveal"><span class="ico" aria-hidden="true">🧾</span><h3>صدور فوری فاکتور</h3><p>یک پیام بفرستید و فاکتور PDF حرفه‌ای به‌همراه عکس قابل ارسال بگیرید. چیدمان راست‌چین، تاریخ شمسی و واحد پول به‌صورت خودکار اعمال می‌شود.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">🖨️</span><h3>چاپ A4 و A5</h3><p>برای چاپ معمولی A4 و برای فیش و رسید A5 را انتخاب کنید. هر دو فایل تک‌صفحه‌ای واقعی و آماده چاپ روی هر پرینتری هستند.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">🖼️</span><h3>برند شما، نه ما</h3><p>لوگوی فروشگاه و عکس کالاها را آپلود کنید. با اشتراک، نام ربات کاملاً حذف می‌شود و فاکتور صد درصد متعلق به برند شماست.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">👥</span><h3>دفتر مشتریان</h3><p>هر فاکتور خودکار به مشتری وصل می‌شود و سابقه خرید و بدهی باز هر مشتری را یک‌جا می‌بینید.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">📦</span><h3>کنترل انبار</h3><p>کالاهای پرفروش را یک بار ثبت کنید. با هر فروش موجودی کم می‌شود و پیش از تمام‌شدن، هشدار کم‌موجودی می‌گیرید.</p></article><article class="card reveal"><span class="ico" aria-hidden="true">📊</span><h3>گزارش و خروجی اکسل</h3><p>درآمد، مبلغ وصول‌شده و معوق، بهترین مشتریان و پرفروش‌ترین کالاها در هر بازه زمانی — با خروجی اکسل.</p></article></div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="center"><h2>از پیام تا فاکتور، در سه قدم</h2></div>
+    <div class="steps" style="margin-top:44px"><div class="step reveal"><h3>ربات را باز کنید</h3><p>در تلگرام Start را بزنید و کشور و زبان را انتخاب کنید. کل تنظیمات ۲۰ ثانیه است.</p></div><div class="step reveal"><h3>اقلام را بفرستید</h3><p>نام مشتری و هر کالا را با تعداد و قیمت، همه در یک پیام بنویسید.</p></div><div class="step reveal"><h3>فاکتور را بگیرید</h3><p>ربات یک PDF آماده چاپ و یک عکس می‌دهد که مستقیم برای مشتری می‌فرستید.</p></div></div>
+  </div>
+</section>
+
+<section class="section section--soft" id="pricing">
+  <div class="wrap">
+    <div class="center">
+      <h2>تعرفه ساده و شفاف</h2>
+      <p class="lead">حسابداری و گزارش‌ها همیشه رایگان است. فقط بابت حجم و حذف برند هزینه می‌دهید.</p>
+    </div>
+    <div class="plans" style="margin-top:44px">
+      <div class="plan">
+        <h3>رایگان</h3>
+        <div class="price"><b>۰</b><span>همیشگی</span></div>
+        <ul><li>۲۰ فاکتور در هر ماه</li><li>خروجی PDF و عکس</li><li>چاپ A4 و A5</li><li>دفتر مشتریان و انبارداری</li><li>دخل و خرج و گزارش‌ها</li><li>خروجی اکسل</li></ul>
+        <a class="btn btn--ghost" href="https://t.me/Invoiclebot" rel="noopener">رایگان شروع کنید — بعداً ارتقا دهید</a>
+      </div>
+      <div class="plan plan--pro">
+        <span class="plan-badge">پرطرفدارترین</span>
+        <h3>حرفه‌ای</h3>
+        <div class="price"><b>۲۴۹٬۰۰۰</b><span>تومان در ماه</span></div>
+        <ul><li>فاکتور نامحدود</li><li>حذف کامل نام ربات از فاکتور</li><li>لوگوی شما روی همه اسناد</li><li>پشتیبانی با اولویت</li><li>همه امکانات پلن رایگان</li></ul>
+        <a class="btn" href="https://t.me/Invoiclebot" rel="noopener">شروع در تلگرام</a>
+      </div>
+    </div>
+    <p class="note">پرداخت در ایران: ۲۴۹٬۰۰۰ تومان کارت‌به‌کارت، یا معادل ۱.۵ دلار با Telegram Stars و رمزارز.</p>
+    <div class="why">
+      <h2 class="center" style="font-size:1.5rem;margin-bottom:22px">چرا اشتراک حرفه‌ای بگیریم؟</h2>
+      <div class="why-item"><h3>فاکتور شما کاملاً حرفه‌ای دیده می‌شود</h3><p>در پلن رایگان یک خط کوچک «Created with @Invoiclebot» پایین فاکتور چاپ می‌شود. اشتراک حرفه‌ای آن را کاملاً حذف می‌کند تا مشتری فقط برند شما را ببیند.</p></div><div class="why-item"><h3>بدون محدودیت ماهانه</h3><p>اگر ماهانه بیشتر از ۲۰ فاکتور صادر می‌کنید، اشتراک سقف را کاملاً برمی‌دارد و لازم نیست منتظر ماه بعد بمانید.</p></div><div class="why-item"><h3>هزینه‌اش را درمی‌آورد</h3><p>قیمت اشتراک کمتر از هزینه یک وعده ساده است — و کمتر از زمانی که برای دستی ساختن یک فاکتور صرف می‌کنید.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="center"><h2>سؤالات پرتکرار</h2></div>
+    <div class="faq" style="margin-top:38px"><details><summary>واقعاً رایگان است؟</summary><p>بله. ماهانه ۲۰ فاکتور کاملاً رایگان دارید، برای همیشه. حسابداری، انبارداری، دفتر مشتریان و گزارش‌ها بدون هیچ محدودیتی رایگان می‌مانند.</p></details><details><summary>باید برنامه‌ای نصب کنم؟</summary><p>خیر. Invoicle کاملاً داخل تلگرام کار می‌کند، پس روی هر گوشی، تبلت یا کامپیوتری که تلگرام دارد اجرا می‌شود.</p></details><details><summary>می‌توانم فاکتورها را چاپ کنم؟</summary><p>بله. هر فاکتور به‌صورت فایل PDF واقعی در اندازه A4 یا A5 ساخته می‌شود و روی هر پرینتری قابل چاپ یا ارسال با ایمیل است.</p></details><details><summary>چه زبان‌هایی پشتیبانی می‌شود؟</summary><p>فارسی، انگلیسی، عربی، ترکی و روسی؛ همراه با چیدمان صحیح راست‌چین و قالب تاریخ و واحد پول محلی.</p></details><details><summary>می‌توانم لوگوی خودم را روی فاکتور بگذارم؟</summary><p>بله. یک بار در تنظیمات لوگو را آپلود کنید تا روی همه فاکتورها بیاید. اشتراک حرفه‌ای، خط تبلیغ ربات را هم حذف می‌کند.</p></details><details><summary>اطلاعات من امن است؟</summary><p>اطلاعات کسب‌وکار شما فقط برای ساخت اسناد استفاده می‌شود و هرگز فروخته یا منتشر نمی‌شود. هر زمان بخواهید می‌توانید فایل پشتیبان کامل بگیرید.</p></details><details><summary>هزینه اشتراک را چطور پرداخت کنم؟</summary><p>Telegram Stars، تتر روی شبکه Polygon یا TRON، و کارت‌به‌کارت برای کاربران ایران. اشتراک بعد از پرداخت به‌صورت خودکار فعال می‌شود.</p></details></div>
+  </div>
+</section>
+
+<section class="section cta">
+  <div class="wrap">
+    <h2>همین امروز اولین فاکتورتان را بفرستید</h2>
+    <p>کمتر از یک دقیقه وقت می‌گیرد و هیچ هزینه‌ای ندارد.</p>
+    <a class="btn btn--lg" href="https://t.me/Invoiclebot" rel="noopener">باز کردن Invoicle در تلگرام</a>
+  </div>
+</section>
+
+</main>
+<footer>
+<div class="wrap">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">
+        <img src="../assets/icon-192.png" alt="" width="30" height="30">Invoicle
+      </div>
+      <p>فاکتور و حسابداری کسب‌وکارهای کوچک، داخل تلگرام.</p>
+    </div>
+    <div>
+      <h4>محصول</h4>
+      <a href="./#features">امکانات</a>
+      <a href="./#pricing">تعرفه</a>
+      <a href="./#faq">سؤالات</a>
+      <a href="https://t.me/Invoiclebot" rel="noopener">@Invoiclebot</a>
+    </div>
+    <div>
+      <h4>قوانین</h4>
+      <a href="./privacy.html">حریم خصوصی</a>
+      <a href="./terms.html">شرایط استفاده</a>
+    </div>
+    <div>
+      <h4>زبان</h4>
+      <div class="langs"><a href="../en/" hreflang="en" lang="en">English</a><a href="../fa/" hreflang="fa" lang="fa" aria-current="true">فارسی</a><a href="../ar/" hreflang="ar" lang="ar">العربية</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../ru/" hreflang="ru" lang="ru">Русский</a></div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Invoicle. تمامی حقوق محفوظ است.</span>
+    <span>@Invoiclebot</span>
+  </div>
+</div>
+</footer>
+</body>
+</html>
