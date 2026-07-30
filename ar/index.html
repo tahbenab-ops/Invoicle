@@ -9,6 +9,7 @@
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="author" content="Invoicle">
 <meta name="theme-color" content="#0F766E">
+
 <link rel="canonical" href="https://tahbenab-ops.github.io/Invoicle/ar/">
 <link rel="alternate" hreflang="en" href="https://tahbenab-ops.github.io/Invoicle/en/">
 <link rel="alternate" hreflang="fa" href="https://tahbenab-ops.github.io/Invoicle/fa/">
@@ -92,6 +93,30 @@ header{
 .btn--ghost{background:transparent;color:var(--teal);border-color:var(--line)}
 .btn--ghost:hover{background:var(--soft);color:var(--teal-d);border-color:var(--teal)}
 .btn--sm{padding:9px 18px;font-size:.92rem}
+
+/* header language picker: real <a> links inside <details>, so crawlers
+   follow them even though the list is collapsed for humans */
+.lang-pick{position:relative}
+.lang-pick summary{
+  cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;
+  padding:8px 13px;border:1px solid var(--line);border-radius:10px;
+  font-weight:600;font-size:.9rem;color:var(--body);white-space:nowrap;
+  transition:border-color .15s ease,color .15s ease;
+}
+.lang-pick summary::-webkit-details-marker{display:none}
+.lang-pick summary:hover{border-color:var(--teal);color:var(--teal)}
+.lang-pick summary::after{content:"▾";font-size:.8rem;opacity:.7}
+.lang-menu{
+  position:absolute;top:calc(100% + 8px);left:0;z-index:60;min-width:172px;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow-lg);padding:6px;
+}
+.lang-menu a{
+  display:block;padding:9px 13px;border-radius:8px;color:var(--body);
+  font-size:.93rem;font-weight:600;white-space:nowrap;
+}
+.lang-menu a:hover{background:var(--soft);color:var(--teal);text-decoration:none}
+.lang-menu a[aria-current="true"]{background:var(--mint);color:var(--teal-d)}
 .btn--lg{padding:16px 34px;font-size:1.08rem}
 
 /* hero */
@@ -231,6 +256,7 @@ footer a:hover{color:#fff}
 @media(max-width:900px){
   .hero-grid,.grid--3,.grid--2,.steps,.plans,.foot-grid{grid-template-columns:1fr}
   .nav-links{display:none}
+  .lang-pick summary{padding:7px 10px}
   .section{padding:52px 0}
   .hero{padding:44px 0}
   body{font-size:16px}
@@ -260,7 +286,10 @@ footer a:hover{color:#fff}
     <a href="#pricing">الأسعار</a>
     <a href="#faq">الأسئلة</a>
   </nav>
-  <a class="btn btn--sm" href="https://t.me/Invoiclebot" rel="noopener">ابدأ على تيليجرام</a>
+  <div style="display:flex;align-items:center;gap:10px">
+    <details class="lang-pick"><summary aria-label="Change language">🌐 العربية</summary><nav class="lang-menu" aria-label="Language"><a href="../en/" hreflang="en" lang="en">English</a><a href="../fa/" hreflang="fa" lang="fa">فارسی</a><a href="../ar/" hreflang="ar" lang="ar" aria-current="true">العربية</a><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a><a href="../ru/" hreflang="ru" lang="ru">Русский</a></nav></details>
+    <a class="btn btn--sm" href="https://t.me/Invoiclebot" rel="noopener">ابدأ على تيليجرام</a>
+  </div>
 </div>
 </header>
 
