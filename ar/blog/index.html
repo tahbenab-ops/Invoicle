@@ -15,8 +15,30 @@ li{margin:.5em 0}aside{background:var(--soft);border-left:5px solid var(--teal);
 footer{text-align:center;border-top:1px solid var(--line);padding:32px 20px;color:#64748b}@media(max-width:600px){main{padding-top:40px}header nav{font-size:.9rem}}
 html[dir="rtl"] header a{margin-left:0;margin-right:20px}
 html[dir="rtl"] aside{border-left:none;border-right:5px solid var(--teal)}
+
+header{height:auto;min-height:68px;border-bottom:1px solid var(--line,#dbe4ea);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:14px max(20px,calc((100% - 1080px)/2));position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(10px);z-index:10}
+.chrome-brand{font-size:20px;font-weight:800;color:var(--teal,#0f766e);text-decoration:none}
+.chrome-nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.chrome-nav a{color:var(--teal,#0f766e);text-decoration:none;font-weight:600}
+.chrome-nav a[aria-current="page"]{color:var(--ink,#0f172a)}
+.chrome-lang{position:relative}
+.chrome-lang summary{list-style:none;cursor:pointer;color:var(--teal,#0f766e);font-weight:600;white-space:nowrap}
+.chrome-lang summary::-webkit-details-marker{display:none}
+.chrome-lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--line,#dbe4ea);border-radius:12px;box-shadow:0 12px 34px #0f172a1f;padding:8px;min-width:150px;z-index:20}
+.chrome-lang-menu a{display:block;padding:7px 10px;border-radius:8px;color:var(--ink,#0f172a);text-decoration:none;font-weight:500}
+.chrome-lang-menu a:hover{background:var(--soft,#f0fdfa)}
+.chrome-lang-menu a[aria-current="true"]{color:var(--teal,#0f766e);font-weight:700}
+html[dir="rtl"] .chrome-lang-menu{right:auto;left:0}
+.chrome-footer{border-top:1px solid var(--line,#dbe4ea);background:#fafcff;padding:40px max(20px,calc((100% - 1080px)/2));margin-top:64px}
+.chrome-footer .chrome-wrap{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:28px;max-width:1080px;margin:0 auto}
+.chrome-footer a{color:var(--teal,#0f766e);text-decoration:none;font-weight:600}
+.chrome-footer .chrome-col{display:flex;flex-direction:column;gap:9px}
+.chrome-footer .chrome-brand{font-size:18px}
+.chrome-footer p{color:var(--body,#334155);margin:0}
+.chrome-footer .chrome-copy{grid-column:1/-1;border-top:1px solid var(--line,#dbe4ea);padding-top:18px;margin-top:8px;text-align:center;color:#64748b;font-size:.9rem}
+@media(max-width:760px){.chrome-footer .chrome-wrap{grid-template-columns:1fr}.chrome-footer .chrome-copy{grid-column:auto}}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}.grid article{border:1px solid var(--line);border-radius:16px;padding:16px}.grid img{width:100%;aspect-ratio:600/315;object-fit:cover;border-radius:10px}.grid h2{font-size:1.25rem;margin:.5em 0}.grid h2 a{color:var(--ink);text-decoration:none}small{color:var(--teal);font-weight:700}</style></head>
-<body><header><a class="brand" href="https://tahbenab-ops.github.io/Invoicle/ar/">Invoicle</a><nav><a href="https://tahbenab-ops.github.io/Invoicle/ar/">الرئيسية</a></nav></header>
+<body><header><a class="chrome-brand" href="https://tahbenab-ops.github.io/Invoicle/ar/">Invoicle</a><nav class="chrome-nav" aria-label="Main"><a href="https://tahbenab-ops.github.io/Invoicle/ar/">الرئيسية</a><a href="https://tahbenab-ops.github.io/Invoicle/ar/blog/" aria-current="page">المدونة</a><a href="https://tahbenab-ops.github.io/Invoicle/ar/privacy.html">سياسة الخصوصية</a><a href="https://tahbenab-ops.github.io/Invoicle/ar/terms.html">شروط الاستخدام</a><details class="chrome-lang"><summary aria-label="اللغة">🌐 العربية</summary><div class="chrome-lang-menu"><a href="https://tahbenab-ops.github.io/Invoicle/en/blog/" hreflang="en" lang="en">English</a><a href="https://tahbenab-ops.github.io/Invoicle/fa/blog/" hreflang="fa" lang="fa">فارسی</a><a href="https://tahbenab-ops.github.io/Invoicle/ar/blog/" hreflang="ar" lang="ar" aria-current="true">العربية</a><a href="https://tahbenab-ops.github.io/Invoicle/tr/blog/" hreflang="tr" lang="tr">Türkçe</a><a href="https://tahbenab-ops.github.io/Invoicle/ru/blog/" hreflang="ru" lang="ru">Русский</a></div></details></nav></header>
 <main><p class="eyebrow">ملاحظات Invoicle</p><h1>أرقام أفضل. قرارات أفضل. أعمال أفضل.</h1>
 <p class="lead">أفكار عملية لأصحاب الأعمال الذين يريدون دفاتر أوضح، وفواتير أوضح، وتسويقاً يكسب الثقة.</p><section class="grid"><article><a href="al-fatura-wa-akhr-laysat-mostanad-faqat/"><img src="https://tahbenab-ops.github.io/Invoicle/assets/blog/en-001-invoice-promise.jpg" alt="A carefully prepared professional invoice beside a handshake and a small business ledger" width="600" height="315"></a><small>1 أغسطس 2026 · فاتورة احترافية</small><h2><a href="al-fatura-wa-akhr-laysat-mostanad-faqat/">الفاتورة وعد، وليست مجرد مستند محاسبي</a></h2><p>الفاتورة الواضحة وفي وقتها المناسب تبني ثقة العميل بشكل حقيقي، وتحمي التدفق النقدي للعمل، وتحوّل طلب الدفع البسيط إلى وعد مهني موثوق يستحق الاحترام.</p></article></section></main>
-<footer>© 2026 Invoicle · تعليم عملي للأعمال الصغيرة.</footer></body></html>
+<footer class="chrome-footer"><div class="chrome-wrap"><div class="chrome-col"><a class="chrome-brand" href="https://tahbenab-ops.github.io/Invoicle/ar/">Invoicle</a><p>تعليم عملي للأعمال الصغيرة.</p></div><nav class="chrome-col" aria-label="Footer"><a href="https://tahbenab-ops.github.io/Invoicle/ar/">الرئيسية</a><a href="https://tahbenab-ops.github.io/Invoicle/ar/blog/">المدونة</a><a href="https://tahbenab-ops.github.io/Invoicle/ar/privacy.html">سياسة الخصوصية</a><a href="https://tahbenab-ops.github.io/Invoicle/ar/terms.html">شروط الاستخدام</a><a href="https://t.me/Invoiclebot" rel="noopener">منشئ فواتير مجاني على تيليجرام</a></nav><nav class="chrome-col chrome-langs" aria-label="اللغة"><a href="https://tahbenab-ops.github.io/Invoicle/en/blog/" hreflang="en" lang="en">English</a><a href="https://tahbenab-ops.github.io/Invoicle/fa/blog/" hreflang="fa" lang="fa">فارسی</a><a href="https://tahbenab-ops.github.io/Invoicle/ar/blog/" hreflang="ar" lang="ar" aria-current="true">العربية</a><a href="https://tahbenab-ops.github.io/Invoicle/tr/blog/" hreflang="tr" lang="tr">Türkçe</a><a href="https://tahbenab-ops.github.io/Invoicle/ru/blog/" hreflang="ru" lang="ru">Русский</a></nav><p class="chrome-copy">© 2026 Invoicle</p></div></footer></body></html>
