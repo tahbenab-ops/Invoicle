@@ -10,6 +10,7 @@
 <meta name="author" content="Invoicle">
 <meta name="theme-color" content="#0F766E">
 
+
 <link rel="canonical" href="https://tahbenab-ops.github.io/Invoicle/tr/">
 <link rel="alternate" hreflang="en" href="https://tahbenab-ops.github.io/Invoicle/en/">
 <link rel="alternate" hreflang="fa" href="https://tahbenab-ops.github.io/Invoicle/fa/">
@@ -37,7 +38,7 @@
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="../assets/hero-invoice.png">
+<link rel="preload" as="image" type="image/webp" imagesrcset="../assets/hero-invoice-480.webp 480w, ../assets/hero-invoice-900.webp 900w, ../assets/hero-invoice-1568.webp 1568w" imagesizes="(max-width: 900px) 92vw, 760px" href="../assets/hero-invoice-900.webp">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
 <style>
 :root{
@@ -284,7 +285,7 @@ footer a:hover{color:#fff}
     <a href="#features">Özellikler</a>
     <a href="#how">Nasıl çalışır</a>
     <a href="#pricing">Fiyatlar</a>
-
+    <a href="./blog/">Blog</a>
     <a href="#faq">SSS</a>
   </nav>
   <div style="display:flex;align-items:center;gap:10px">
@@ -310,8 +311,15 @@ footer a:hover{color:#fff}
       <div class="trust"><span>PDF ve görsel çıktı</span><span>A4 ve A5 baskı</span><span>5 dil</span><span>Her faturada logonuz</span></div>
     </div>
     <div class="reveal">
-      <img class="hero-img" src="../assets/hero-invoice.png" width="1568" height="882"
-           alt="10 saniyede profesyonel fatura — Invoicle Telegram bot invoice preview" fetchpriority="high">
+      <picture>
+        <source type="image/webp"
+                srcset="../assets/hero-invoice-480.webp 480w,
+                        ../assets/hero-invoice-900.webp 900w,
+                        ../assets/hero-invoice-1568.webp 1568w"
+                sizes="(max-width: 900px) 92vw, 760px">
+        <img class="hero-img" src="../assets/hero-invoice.png" width="1568" height="882"
+             alt="10 saniyede profesyonel fatura — Invoicle Telegram bot invoice preview" fetchpriority="high">
+      </picture>
     </div>
   </div>
 </section>
@@ -391,7 +399,7 @@ footer a:hover{color:#fff}
       <h4>Ürün</h4>
       <a href="./#features">Özellikler</a>
       <a href="./#pricing">Fiyatlar</a>
-
+      <a href="./blog/">Blog</a>
       <a href="./#faq">SSS</a>
       <a href="https://t.me/Invoiclebot" rel="noopener">@Invoiclebot</a>
     </div>

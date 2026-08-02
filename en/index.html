@@ -10,6 +10,7 @@
 <meta name="author" content="Invoicle">
 <meta name="theme-color" content="#0F766E">
 
+
 <link rel="canonical" href="https://tahbenab-ops.github.io/Invoicle/en/">
 <link rel="alternate" hreflang="en" href="https://tahbenab-ops.github.io/Invoicle/en/">
 <link rel="alternate" hreflang="fa" href="https://tahbenab-ops.github.io/Invoicle/fa/">
@@ -37,7 +38,7 @@
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="../assets/hero-invoice.png">
+<link rel="preload" as="image" type="image/webp" imagesrcset="../assets/hero-invoice-480.webp 480w, ../assets/hero-invoice-900.webp 900w, ../assets/hero-invoice-1568.webp 1568w" imagesizes="(max-width: 900px) 92vw, 760px" href="../assets/hero-invoice-900.webp">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet">
 <style>
 :root{
@@ -310,8 +311,15 @@ footer a:hover{color:#fff}
       <div class="trust"><span>PDF &amp; image export</span><span>A4 and A5 printing</span><span>5 languages</span><span>Your logo on every invoice</span></div>
     </div>
     <div class="reveal">
-      <img class="hero-img" src="../assets/hero-invoice.png" width="1568" height="882"
-           alt="Professional invoices in 10 seconds — Invoicle Telegram bot invoice preview" fetchpriority="high">
+      <picture>
+        <source type="image/webp"
+                srcset="../assets/hero-invoice-480.webp 480w,
+                        ../assets/hero-invoice-900.webp 900w,
+                        ../assets/hero-invoice-1568.webp 1568w"
+                sizes="(max-width: 900px) 92vw, 760px">
+        <img class="hero-img" src="../assets/hero-invoice.png" width="1568" height="882"
+             alt="Professional invoices in 10 seconds — Invoicle Telegram bot invoice preview" fetchpriority="high">
+      </picture>
     </div>
   </div>
 </section>
